@@ -6,12 +6,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-
 const Navbar = () => {
+    // State für das Responsive Menu
     const [isOpen, setIsOpen] = useState(false);
+    // Pathname state für die Farbverwaltung der Navbar in verschiedenen Seiten
     const pathname = usePathname();
 
-
+    // Toggle Menu Funktion für das Responsive Design
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
@@ -24,9 +25,7 @@ const Navbar = () => {
                 {/* Logo */}
                 <div className="flex flex-row items-center gap-2 justify-start">
                     <Link href={"./"}><Image src="/assets/logo.png" alt="logo" height={70} width={70}/></Link>
-
                 </div>
-
                 {/* Desktop-Navigation */}
                 <ul className="hidden lg:flex items-center justify-end gap-8 uppercase text-sm font-semibold">
                     <Link href="./">
