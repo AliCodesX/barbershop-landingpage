@@ -7,3 +7,7 @@
     @apply hover:text-hoverColor cursor-pointer duration-300;
   }
 }
+
+body{
+ background-color: brown;
+}
