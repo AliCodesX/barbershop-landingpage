@@ -23,8 +23,8 @@ const Navbar = () => {
             <div className="max-w-screen-2xl h-full mx-auto px-4 flex items-center justify-between">
                 {/* Logo */}
                 <div className="flex flex-row items-center gap-2 justify-start">
-                    <Image src="/assets/logo.png" alt="logo" height={70} width={70}/>
-                    <Link href={"./"}><h1 className="text-2xl font-bold navbarLi">MOMO & ZOZO</h1></Link>
+                    <Link href={"./"}><Image src="/assets/logo.png" alt="logo" height={70} width={70}/></Link>
+
                 </div>
 
                 {/* Desktop-Navigation */}
