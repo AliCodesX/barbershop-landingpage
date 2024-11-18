@@ -7,7 +7,9 @@ const Banner = () => {
         words: [
             "Dein Stil, unser Fokus.",
             "Exzellente Barber-Kunst für deinen Look.",
-            "Jeder Schnitt sitzt – perfekt und einzigartig."
+            "Jeder Schnitt sitzt – perfekt und einzigartig.",
+            "Wo jeder Schnitt eine Geschichte erzählt."
+
         ],
         loop: true,
         typeSpeed: 30,
@@ -16,12 +18,12 @@ const Banner = () => {
     });
 
     return (
-        <div className="relative h-screen w-full overflow-hidden">
-            {/* Hintergrundvideo mit Zoom und Verschiebung */}
-            <div className="absolute top-0 left-0 w-full h-full">
+        <div>
+            {/* Hintergrundvideo (fixiert) */}
+            <div className="fixed top-0 left-0 w-full h-full -z-10">
                 <video
-                    className="absolute top-0 left-0 w-full h-full object-cover"
-                    style={{ transform: 'scale(1.62) translateY(-10%)' }} // Zoom und Verschiebung nach oben
+                    className="w-full h-full object-cover"
+                    style={{ transform: 'scale(1.62) translateY(-10%)' }} // Optional: Zoom und Verschiebung
                     src={require('../public/assets/intro.mp4')} // oder src="/assets/intro.mp4"
                     autoPlay
                     muted
@@ -30,10 +32,10 @@ const Banner = () => {
             </div>
 
             {/* Abdunklung */}
-            <div className="absolute top-0 left-0 w-full h-full bg-black opacity-75 z-10"></div>
+            <div className="fixed  top-0 left-0 w-full h-full bg-black opacity-75"></div>
 
             {/* Content */}
-            <div className="relative z-20 h-full flex flex-col justify-center items-center text-center text-white px-4">
+            <div className=" mt-32 relative z-20 h-full flex flex-col justify-center items-center text-center text-white px-4">
                 <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold uppercase leading-tight">
                     MOMO & ZOZO BARBERSHOP
                 </h1>

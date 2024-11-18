@@ -4,16 +4,22 @@ import { motion } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const pathname = usePathname();
+
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
 
+    const isHomePage = pathname === "/";
+
     return (
-        <div className="sticky top-0 z-30 w-full h-20 lg:h-28 bg-black text-white">
+        <div className={`sticky top-0 z-30 w-full h-20 lg:h-28 ${isHomePage ? 'bg-transparent' : 'bg-black/50'} text-white`}>
             <div className="max-w-screen-2xl h-full mx-auto px-4 flex items-center justify-between">
                 {/* Logo */}
                 <div className="flex flex-row items-center gap-2 justify-start">
