@@ -11,7 +11,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-        <body className={montserrat.className}>
+        <body  className={montserrat.className}>
         <Navbar /> {/* Navbar wird auf allen Seiten angezeigt */}
         <main>{children}</main> {/* Der spezifische Inhalt jeder Seite */}
         {/* Hier kommt der Banner hin */}
