@@ -20,7 +20,7 @@ const Navbar = () => {
     const isHomePage = pathname === "/";
 
     return (
-        <div className={`sticky top-0 z-30 w-full h-20 lg:h-28 ${isHomePage ? 'bg-transparent' : 'bg-black/50'} text-white`}>
+        <div className={`sticky top-0 z-30 w-full h-20 lg:h-28 ${isHomePage ? 'bg-transparent' :  'bg-gradient-to-b from-black to-gray-700 shadow-5xl '} text-white`}>
             <div className="max-w-screen-2xl h-full mx-auto px-4 flex items-center justify-between">
                 {/* Logo */}
                 <div className="flex flex-row items-center gap-2 justify-start">
@@ -37,7 +37,7 @@ const Navbar = () => {
                     <Link href="/price">
                         <li className="navbarLi">Preise</li>
                     </Link>
-                    <Link href="./">
+                    <Link href="/contact">
                         <li className="navbarLi">Kontakt</li>
                     </Link>
                 </ul>
