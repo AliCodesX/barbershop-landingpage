@@ -24,7 +24,7 @@ const UeberUns = () => {
     ];
 
     const philosophieBilder = [
-        { src: "/assets/rasier.jpg", alt: "Schneidebereich", title: "Schneidebereich",text: "Unser Schneidebereich ist der Ort, an dem Präzision auf Stil trifft. Mit modernen Geräten und bewährten Techniken sorgen unsere Friseure dafür, dass du den perfekten Schnitt erhältst. Ob klassisch oder trendy – hier bist du in besten Händen. Genieße eine entspannte Atmosphäre, während wir deinen Look auf das nächste Level bringen." },
+        { src: "/assets/rasier.jpg", alt: "Schneidebereich", title: "Schneidebereich",text: "Unser Schneidebereich ist der Ort, an dem Präzision auf Stil trifft. Mit modernen Geräten und bewährten Techniken sorgen unsere Friseure dafür, dass du den perfekten Schnitt erhältst. Ob klassisch oder trendy  hier bist du in besten Händen. Genieße eine entspannte Atmosphäre, während wir deinen Look auf das nächste Level bringen." },
         { src: "/assets/stuhl.jpg", alt: "Schneidegeräte", title: "Unsere Ambiente",text:"Das Ambiente in unserem BarberShop ist genauso wichtig wie der Schnitt selbst. Mit einer Kombination aus zeitlosem Design und gemütlicher Atmosphäre schaffen wir den perfekten Raum für dein Erlebnis. Warme Farben, stilvolle Einrichtung und eine entspannte Stimmung laden zum Verweilen ein. Hier kannst du dich zurücklehnen, entspannen und den Moment genießen, während wir uns um deinen Look kümmern." },
     ];
 
