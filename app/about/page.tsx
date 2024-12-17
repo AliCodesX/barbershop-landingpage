@@ -4,7 +4,7 @@ import { Card, CardContent, CardMedia, Typography, Button, Modal } from '@mui/ma
 import Image from 'next/image';
 
 const UeberUns = () => {
-    const [selectedMitarbeiter, setSelectedMitarbeiter] = useState(null);
+    const [selectedMitarbeiter, setSelectedMitarbeiter] = useState(false);
 
     const mitarbeiter = [
         {
@@ -38,43 +38,6 @@ const UeberUns = () => {
                     Haar und Bart zu bieten.
                 </p>
             </div>
-            <h3 className="text-3xl font-bold text-center mb-8 ">Unser Team</h3>
-
-            <div className="flex justify-center ">
-                <div className="mb-20 flex justify-center bg-gray-900 p-7 rounded-lg shadow w-full ">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-10">
-                        {mitarbeiter.map((person, index) => (
-                            <Card
-                                key={index}
-                                className="bg-gray-200 shadow-lg rounded-lg h-full w-full sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px]"
-                            >
-                                <CardMedia
-                                    component="img"
-                                    className=" h-90 w-full object-cover object-top "
-                                    image={person.bild}
-                                    title={person.name}
-                                />
-                                <CardContent className="text-black p-4 flex flex-col">
-                                    <Typography variant="h5" component="div" className="font-bold">
-                                        {person.name}
-                                    </Typography>
-                                    <Typography variant="body2" color="textSecondary" component="div" className="mt-2">
-                                        {person.rolle}
-                                    </Typography>
-                                    <Button
-                                        variant="contained"
-                                        onClick={() => setSelectedMitarbeiter(person)}
-                                        className="mt-4 bg-black"
-                                    >
-                                        Mehr erfahren
-                                    </Button>
-                                </CardContent>
-                            </Card>
-
-                        ))}
-                    </div>
-                </div>
-            </div>
 
 
             <div className="mb-12">
@@ -83,7 +46,8 @@ const UeberUns = () => {
                     Unsere Philosophie dreht sich um Qualität, Stil und eine persönliche Note. Wir glauben daran, dass
                     jeder Besuch bei uns ein Erlebnis sein sollte – von der Atmosphäre bis zum perfekten Schnitt.
                 </p>
-                <div className="grid grid-cols-1 rounded-lg sm:grid-cols-2 gap-6 justify-center bg-gray-900 p-7 text-white ">
+                <div
+                    className="grid grid-cols-1 rounded-lg sm:grid-cols-2 gap-6 justify-center bg-richBlack p-7 text-white ">
                     {philosophieBilder.map((philo, index) => (
                         <div key={index} className="relative overflow-hidden rounded-lg ">
                             <div className="relative h-96 w-full">
@@ -95,12 +59,66 @@ const UeberUns = () => {
                                     className="absolute inset-0"
                                 />
                             </div>
-                            <h4 className="text-center text-xl font-semibold mt-2">{philo.title}</h4>
+                            <h4 className="text-center text-xl font-semibold my-2">{philo.title}</h4>
                             <p className="text-center text-gray-500 mb-4 ">{philo.text}</p>
                         </div>
                     ))}
                 </div>
             </div>
+
+
+            <div className="flex flex-col lg:flex-row p-6 bg-richBlack text-white">
+                {/* Linker Container: Grid mit Cards */}
+                <div className="flex-1 lg:w-2/3">
+                    <h3 className="text-2xl font-bold mb-4">Unser Team</h3>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                        {mitarbeiter.map((person, index) => (
+                            <Card key={index} className="bg-richBlack text-white">
+                                <CardMedia
+                                    component="img"
+                                    className="h-50 w-full object-top object-cover"
+                                    image={person.bild}
+                                    title={person.name}
+                                    alt={`${person.name}'s Bild`}
+                                />
+                                <CardContent className="p-2 text-white">
+                                    <Typography variant="h6" className="text-sm font-bold">
+                                        {person.name}
+                                    </Typography>
+                                    <Typography variant="body2" className="text-xs mt-1">
+                                        {person.rolle}
+                                    </Typography>
+                                    <Button
+                                        variant="contained"
+                                        onClick={() => setSelectedMitarbeiter(person)}
+                                        className="mt-4 bg-ButtonRed text-white"
+                                    >
+                                        Mehr erfahren
+                                    </Button>
+                                </CardContent>
+
+                            </Card>
+
+                        ))}
+                    </div>
+                </div>
+
+                {/* Rechter Container: Text */}
+                <div className="flex-1 lg:w-1/3 lg:pl-6 mt-6 lg:mt-0">
+                    <h3 className="text-2xl font-bold mb-4">Willkommen bei unserem Team</h3>
+                    <p className="text-gray-700">
+                        Wir sind ein leidenschaftliches Team von Fachleuten, die zusammenarbeiten, um die besten
+                        Ergebnisse für unsere Kunden zu erzielen.
+                        Jeder bringt seine einzigartigen Fähigkeiten mit, um unser Ziel zu erreichen. Wir freuen uns
+                        darauf, gemeinsam mit Ihnen zu wachsen!
+                    </p>
+                    <p className="mt-4 text-gray-600">
+                        Lernen Sie unser Team kennen, indem Sie die Profile unserer Mitarbeiter durchsehen. Klicken Sie
+                        auf Mehr erfahren, um weitere Details zu erfahren.
+                    </p>
+                </div>
+            </div>
+
 
             {/* Modal für Mitarbeiterdetails */}
             {selectedMitarbeiter && (

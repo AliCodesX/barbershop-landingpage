@@ -11,6 +11,10 @@ module.exports = {
 
       },
       colors: {
+        Dun: "#D1C6AD",
+        Khaki: "#f5f5f5",
+        richBlack: "#011627",
+        ButtonRed: "#8B2635",
         hoverColor: "#ffaa17",
         darkRed: "#ea0638",
       },

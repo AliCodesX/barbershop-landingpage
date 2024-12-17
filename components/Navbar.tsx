@@ -20,7 +20,7 @@ const Navbar = () => {
     const isHomePage = pathname === "/";
 
     return (
-        <div className={`sticky top-0 z-30 w-full h-20 lg:h-28 ${isHomePage ? 'bg-transparent' :  'bg-gray-900 '} text-white`}>
+        <div className={`sticky top-0 z-30 w-full h-20 lg:h-28 ${isHomePage ? 'bg-transparent' :  'bg-richBlack'} text-white`}>
             <div className="max-w-screen-2xl h-full mx-auto px-4 flex items-center justify-between">
                 {/* Logo */}
                 <div className="flex flex-row items-center gap-2 justify-start">
