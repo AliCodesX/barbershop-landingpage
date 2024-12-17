@@ -33,7 +33,7 @@ const UeberUns = () => {
             {/* Über uns Abschnitt */}
             <div className="text-center mb-10">
                 <h2 className="text-4xl font-bold text-black mb-4">Über uns</h2>
-                <p className="text-lg text-gray-700">
+                <p className="text-lg text-gray-900">
                     Willkommen in unserem BarberShop! Wir vereinen Tradition und Moderne, um dir den besten Service für
                     Haar und Bart zu bieten.
                 </p>
@@ -42,7 +42,7 @@ const UeberUns = () => {
 
             <div className="mb-12">
                 <h3 className="text-3xl font-bold text-center mb-8">Unsere Philosophie</h3>
-                <p className="text-lg text-center text-gray-700 mb-6">
+                <p className="text-lg text-center text-gray-900 mb-6">
                     Unsere Philosophie dreht sich um Qualität, Stil und eine persönliche Note. Wir glauben daran, dass
                     jeder Besuch bei uns ein Erlebnis sein sollte – von der Atmosphäre bis zum perfekten Schnitt.
                 </p>
@@ -59,8 +59,8 @@ const UeberUns = () => {
                                     className="absolute inset-0"
                                 />
                             </div>
-                            <h4 className="text-center text-xl font-semibold my-2">{philo.title}</h4>
-                            <p className="text-center text-gray-500 mb-4 ">{philo.text}</p>
+                            <h4 className="text-center  text-xl font-semibold my-2">{philo.title}</h4>
+                            <p className="text-center text-gray-400 mb-4 ">{philo.text}</p>
                         </div>
                     ))}
                 </div>
@@ -106,13 +106,13 @@ const UeberUns = () => {
                 {/* Rechter Container: Text */}
                 <div className="flex-1 lg:w-1/3 lg:pl-6 mt-6 lg:mt-0">
                     <h3 className="text-2xl font-bold mb-4">Willkommen bei unserem Team</h3>
-                    <p className="text-gray-700">
+                    <p className="text-gray-400">
                         Wir sind ein leidenschaftliches Team von Fachleuten, die zusammenarbeiten, um die besten
                         Ergebnisse für unsere Kunden zu erzielen.
                         Jeder bringt seine einzigartigen Fähigkeiten mit, um unser Ziel zu erreichen. Wir freuen uns
                         darauf, gemeinsam mit Ihnen zu wachsen!
                     </p>
-                    <p className="mt-4 text-gray-600">
+                    <p className="mt-4 text-gray-400">
                         Lernen Sie unser Team kennen, indem Sie die Profile unserer Mitarbeiter durchsehen. Klicken Sie
                         auf Mehr erfahren, um weitere Details zu erfahren.
                     </p>
@@ -127,13 +127,13 @@ const UeberUns = () => {
                     onClose={() => setSelectedMitarbeiter(null)}
                     className="flex items-center justify-center p-4"
                 >
-                    <div className="bg-white rounded-lg p-6 max-w-sm w-full">
+                    <div className="bg-richBlack rounded-lg p-6 max-w-sm w-full text-white">
                         <div className="flex flex-col items-center">
 
                             <Typography variant="h6"
                                         className="text-xl font-semibold mb-2">{selectedMitarbeiter.name}</Typography>
                             <Typography variant="body2"
-                                        className="text-gray-700 mb-4 text-center">{selectedMitarbeiter.erfahrung}</Typography>
+                                        className="text-gray-400 mb-4 text-center">{selectedMitarbeiter.erfahrung}</Typography>
                             <Button
                                 variant="contained"
                                 color="secondary"
