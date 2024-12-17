@@ -16,7 +16,6 @@ module.exports = {
         richBlack: "#011627",
         ButtonRed: "#8B2635",
         hoverColor: "#ffaa17",
-        darkRed: "#ea0638",
       },
     },
   },

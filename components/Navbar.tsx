@@ -57,10 +57,11 @@ const Navbar = () => {
                         <FiX className="text-3xl cursor-pointer" onClick={toggleMenu}/>
                     </div>
                     <ul className="space-y-4">
-                        <li className="navbarLi">Home</li>
-                        <li className="navbarLi">Über uns</li>
-                        <li className="navbarLi">Preise</li>
-                        <li className="navbarLi">Kontakt</li>
+
+                        <li className="navbarLi"> <Link href="./" >Home</Link></li>
+                        <li className="navbarLi"> <Link href="/about" >Über uns</Link></li>
+                        <li className="navbarLi"> <Link href="/price" >Preise</Link></li>
+                        <li className="navbarLi"> <Link href="/contact" >Kontakt</Link></li>
                     </ul>
                 </motion.div>
             </div>
