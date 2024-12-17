@@ -48,7 +48,7 @@ const Footer = () => {
 
                 {/* Social Media */}
                 <div>
-                    <h3 className="text-lg font-semibold mb-4">Folge uns</h3>
+                    <h3 className="text-lg font-semibold mb-4">Folge uns auf SocialMedia </h3>
                     <div className="flex items-center space-x-6">
                         <a
                             href="https://www.tiktok.com/@deinprofil"

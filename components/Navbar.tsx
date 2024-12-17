@@ -50,7 +50,7 @@ const Navbar = () => {
                     initial={{x: "100%"}}
                     animate={isOpen ? {x: 0} : {x: "100%"}}
                     transition={{duration: 0.5}}
-                    className="fixed top-0 right-0 h-screen w-64 bg-gray-900 text-white shadow-md p-4"
+                    className="fixed top-0 right-0 h-screen w-64 bg-richBlack text-white shadow-md p-4"
                 >
                     <div className="flex items-center justify-between mb-4 ">
                         <h2 className="text-xl font-bold">Menu</h2>
