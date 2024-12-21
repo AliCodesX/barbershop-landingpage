@@ -1,0 +1,31 @@
+.barber-pole, .small-barber-pole {
+    position: relative;
+    width: 30px;
+    height: 150px;
+    background: repeating-linear-gradient(
+            35deg,
+            red,
+            red 10px,
+            white 10px,
+            white 20px,
+            blue 20px,
+            blue 30px
+    );
+    border: 2px solid black;
+    border-radius: 10px;
+    animation: barber-spin 6s linear infinite;
+}
+
+.small-barber-pole {
+    width: 25px;
+    height: 80px;
+}
+
+@keyframes barber-spin {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 300px; /* Dies sorgt dafür, dass die Animation ohne Unterbrechung weiterläuft */
+    }
+}

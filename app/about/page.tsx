@@ -73,10 +73,10 @@ const UeberUns = () => {
                     <h3 className="text-2xl font-bold mb-4">Unser Team</h3>
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                         {mitarbeiter.map((person, index) => (
-                            <Card key={index} className="bg-richBlack text-white">
+                            <Card key={index} className="bg-richBlack">
                                 <CardMedia
                                     component="img"
-                                    className="h-50 w-full object-top object-cover"
+                                    className="h-4/6 w-full object-top object-cover"
                                     image={person.bild}
                                     title={person.name}
                                     alt={`${person.name}'s Bild`}
