@@ -13,37 +13,36 @@ const Preise = () => {
     ];
 
     return (
-        <Box sx={{ bgcolor: "#D1C6AD", color: "black", p: 4 }}>
+        <Box sx={{ p: 3}}>
             {/* Überschrift mit Barber-Stange */}
-            <Box sx={{ textAlign: "center", mb: 4 }}>
-                <Typography variant="h3" sx={{ fontWeight: "bold", mt: 2 }}>
-                    Unsere Preise
-                </Typography>
-            </Box>
+            <div className="text-center mb-10">
+                <h2 className="text-4xl font-bold text-black m-10">Unsere Preisliste</h2>
+
+            </div>
 
             {/* Preisliste */}
-            <Paper className="bg-richBlack text-white" sx={{ p: 3, borderRadius: 4, boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)" }}>
+            <Paper className="bg-richBlack text-white  opacity-2 rounded-xl border-white shadow-2xl p-3 ">
                 {services.map((service, index) => (
                     <Box key={index}>
-                        <Grid container alignItems="center" sx={{ py: 2 }}>
+                        <Grid container alignItems="center" sx={{py: 2}}>
                             <Grid item xs={1}>
                                 <div className="small-barber-pole"></div>
                             </Grid>
                             <Grid item xs={7}>
-                                <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+                                <Typography variant="h6" sx={{fontWeight: "bold"}}>
                                     {service.name}
                                 </Typography>
-                                <Typography variant="body2" sx={{ color: "gray" }}>
+                                <Typography variant="body2" sx={{color: "gray"}}>
                                     {service.description}
                                 </Typography>
                             </Grid>
-                            <Grid item xs={4} sx={{ textAlign: "right" }}>
-                                <Typography variant="h6" sx={{ fontWeight: "bold", color: "white" }}>
+                            <Grid item xs={4} sx={{textAlign: "right"}}>
+                                <Typography variant="h6" sx={{fontWeight: "bold", color: "white"}}>
                                     {service.price}
                                 </Typography>
                             </Grid>
                         </Grid>
-                        {index < services.length - 1 && <Divider />}
+                        {index < services.length - 1 && <Divider/>}
                     </Box>
                 ))}
             </Paper>
