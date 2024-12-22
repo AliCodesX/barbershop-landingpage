@@ -13,16 +13,16 @@ const Preise = () => {
     ];
 
     return (
-        <div className="p-6 bg-gray-100">
+        <div className="p-6 ">
             {/* Überschrift */}
             <div className="text-center mb-10">
                 <h2 className="text-4xl font-bold text-black mb-4">Unsere Preisliste</h2>
             </div>
 
             {/* Preisliste */}
-            <div className="bg-richBlack text-white rounded-xl shadow-2xl p-6">
+            <div className=" bg-blackBackground text-white rounded-xl shadow-2xl p-6">
                 {services.map((service, index) => (
-                    <div key={index} className="flex items-center py-4 border-b border-gray-700 ">
+                    <div key={index} className="flex items-center py-4  ">
                         {/* Icon */}
                         <div className="flex w-12 h-12">
                             <Image src="/assets/barber-pole.png" alt="Barber Pole" className="rounded-full" width={48} height={48} />

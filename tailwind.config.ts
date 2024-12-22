@@ -15,6 +15,8 @@ module.exports = {
   			richBlack: '#141414',
   			ButtonRed: '#8B2635',
   			hoverColor: '#ffaa17',
+			blackBackground: '#1f1f1f',
+
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
