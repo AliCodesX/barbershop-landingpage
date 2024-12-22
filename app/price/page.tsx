@@ -1,52 +1,47 @@
 import React from "react";
-import { Box, Typography, Paper, Divider, Grid } from "@mui/material";
-import './BarberStyles.css'; // CSS für Animation
+import Image from "next/image";
+
 
 const Preise = () => {
     const services = [
-        { name: "Waschen, Schneiden, Föhnen", description: "Mit Epilierer", price: "€18" },
-        { name: "Trockenschnitt", description: "Schnell und präzise", price: "€15" },
-        { name: "Momo & Zozo Paket", description: "All-inclusive-Erlebnis", price: "€30" },
-        { name: "Bartschnitt mit Konturenrasur", description: "Für perfekte Linien", price: "€10" },
-        { name: "Kinderhaarschnitt bis 10 Jahre", description: "Besonders kinderfreundlich", price: "€10" },
-        { name: "Augenbrauen zupfen", description: "Für den perfekten Look", price: "€5" },
+        { name: "Waschen, Schneiden, Föhnen", description: "Mit Epilierer", price: "18€" },
+        { name: "Trockenschnitt", description: "Schnell und präzise", price: "15€" },
+        { name: "Momo & Zozo Paket", description: "All-inclusive-Erlebnis", price: "30€" },
+        { name: "Bartschnitt mit Konturenrasur", description: "Für perfekte Linien", price: "10€" },
+        { name: "Kinderhaarschnitt bis 10 Jahre", description: "Besonders kinderfreundlich", price: "10€" },
+        { name: "Augenbrauen zupfen", description: "Für den perfekten Look", price: "5€" },
     ];
 
     return (
-        <Box sx={{ p: 3}}>
-            {/* Überschrift mit Barber-Stange */}
+        <div className="p-6 bg-gray-100">
+            {/* Überschrift */}
             <div className="text-center mb-10">
-                <h2 className="text-4xl font-bold text-black m-10">Unsere Preisliste</h2>
-
+                <h2 className="text-4xl font-bold text-black mb-4">Unsere Preisliste</h2>
             </div>
 
             {/* Preisliste */}
-            <Paper className="bg-richBlack text-white  opacity-2 rounded-xl border-white shadow-2xl p-3 ">
+            <div className="bg-richBlack text-white rounded-xl shadow-2xl p-6">
                 {services.map((service, index) => (
-                    <Box key={index}>
-                        <Grid container alignItems="center" sx={{py: 2}}>
-                            <Grid item xs={1}>
-                                <div className="small-barber-pole"></div>
-                            </Grid>
-                            <Grid item xs={7}>
-                                <Typography variant="h6" sx={{fontWeight: "bold"}}>
-                                    {service.name}
-                                </Typography>
-                                <Typography variant="body2" sx={{color: "gray"}}>
-                                    {service.description}
-                                </Typography>
-                            </Grid>
-                            <Grid item xs={4} sx={{textAlign: "right"}}>
-                                <Typography variant="h6" sx={{fontWeight: "bold", color: "white"}}>
-                                    {service.price}
-                                </Typography>
-                            </Grid>
-                        </Grid>
-                        {index < services.length - 1 && <Divider/>}
-                    </Box>
+                    <div key={index} className="flex items-center py-4 border-b border-gray-700 ">
+                        {/* Icon */}
+                        <div className="flex w-12 h-12">
+                            <Image src="/assets/barber-pole.png" alt="Barber Pole" className="rounded-full" width={48} height={48} />
+                        </div>
+
+                        {/* Service Details */}
+                        <div className="flex-grow px-4">
+                            <h3 className="text-lg font-bold text-white">{service.name}</h3>
+                            <p className="text-sm text-gray-400">{service.description}</p>
+                        </div>
+
+                        {/* Preis */}
+                        <div className="text-right">
+                            <p className="text-lg font-bold text-white">{service.price}</p>
+                        </div>
+                    </div>
                 ))}
-            </Paper>
-        </Box>
+            </div>
+        </div>
     );
 };
 

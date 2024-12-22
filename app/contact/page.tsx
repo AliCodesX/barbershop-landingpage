@@ -1,70 +1,72 @@
+'use client';
+
 import React from "react";
-import { Container, Typography, Grid, Card, CardContent, Avatar, Box } from "@mui/material";
-
-const staff = [
-    { name: "Ali", role: "Barber", img: "/images/ali.jpg" },
-    { name: "Sara", role: "Stylistin", img: "/images/sara.jpg" },
-    { name: "Hassan", role: "Manager", img: "/images/hassan.jpg" },
-];
-
-const openingHours = [
-    { day: "Montag - Freitag", hours: "09:00 - 18:00" },
-    { day: "Samstag", hours: "10:00 - 16:00" },
-    { day: "Sonntag", hours: "Geschlossen" },
-];
+import { Container, Typography, Box, Card, CardContent } from "@mui/material";
+import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 const Contact = () => {
+    const address = "Am Schilfspark 26, 21029 Hamburg";
+    const phone = "+49 123 456789";
+    const openingHours = "Mo - Sa: 9:00 - 19:00 Uhr";
+    const holidayNotice = "An Feiertagen können die Öffnungszeiten abweichen.";
+
+    // Typewriter effect using the hook
+    const [text] = useTypewriter({
+        words: ["Du kannst jederzeit ohne Termin vorbeikommen."],
+        loop: 0, // Loop 0 means it only types once
+        delaySpeed: 100,
+    });
+
     return (
         <Container maxWidth="lg" sx={{ py: 4 }}>
-            <Typography variant="h3" component="h1" gutterBottom>
-                Kontakt
-            </Typography>
+            {/* Typewriter Text */}
+            <Box sx={{ mb: 4 }}>
+                <Typography className="text-center" variant="h5" gutterBottom>
+                    Besuche uns ohne einen Termin!
+                </Typography>
+                <Typography className="text-center" variant="h6">
+                    {text}
+                    <Cursor />
+                </Typography>
+            </Box>
+
+            {/* Kontaktinformationen */}
+            <Box sx={{ mb: 4 }}>
+                <Typography variant="h5" gutterBottom>
+                    Kontaktinformationen
+                </Typography>
+                <Card variant="outlined">
+                    <CardContent>
+                        <Typography variant="subtitle1">Adresse</Typography>
+                        <Typography variant="body2">{address}</Typography>
+                    </CardContent>
+                </Card>
+                <Card variant="outlined" sx={{ mt: 2 }}>
+                    <CardContent>
+                        <Typography variant="subtitle1">Telefon</Typography>
+                        <Typography variant="body2">{phone}</Typography>
+                    </CardContent>
+                </Card>
+            </Box>
 
             {/* Öffnungszeiten */}
             <Box sx={{ mb: 4 }}>
                 <Typography variant="h5" gutterBottom>
                     Öffnungszeiten
                 </Typography>
-                <Grid container spacing={2}>
-                    {openingHours.map((item, index) => (
-                        <Grid item xs={12} sm={6} md={4} key={index}>
-                            <Card variant="outlined">
-                                <CardContent>
-                                    <Typography variant="subtitle1" fontWeight="bold">
-                                        {item.day}
-                                    </Typography>
-                                    <Typography variant="body2">{item.hours}</Typography>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-                    ))}
-                </Grid>
-            </Box>
-
-            {/* Mitarbeiter */}
-            <Box>
-                <Typography variant="h5" gutterBottom>
-                    Unsere Mitarbeiter
-                </Typography>
-                <Grid container spacing={2}>
-                    {staff.map((member, index) => (
-                        <Grid item xs={12} sm={6} md={4} key={index}>
-                            <Card variant="outlined" sx={{ textAlign: "center" }}>
-                                <CardContent>
-                                    <Avatar
-                                        src={member.img}
-                                        alt={member.name}
-                                        sx={{ width: 80, height: 80, mx: "auto", mb: 2 }}
-                                    />
-                                    <Typography variant="h6">{member.name}</Typography>
-                                    <Typography variant="body2" color="text.secondary">
-                                        {member.role}
-                                    </Typography>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-                    ))}
-                </Grid>
+                <Card variant="outlined">
+                    <CardContent>
+                        <Typography variant="subtitle1">Unsere  Öffnungszeiten</Typography>
+                        <Typography variant="body2">{openingHours}</Typography>
+                    </CardContent>
+                </Card>
+                <Card variant="outlined" sx={{ mt: 2 }}>
+                    <CardContent>
+                        <Typography variant="body2" color="textSecondary">
+                            {holidayNotice}
+                        </Typography>
+                    </CardContent>
+                </Card>
             </Box>
         </Container>
     );
