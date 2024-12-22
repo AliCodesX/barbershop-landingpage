@@ -1,12 +1,13 @@
 'use client';
-import React, { useState } from "react";
-import { Modal } from '@mui/material';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@shadcn/ui';
-import { Button } from '@shadcn/ui';
+import { useState } from "react";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import Image from 'next/image';
 
+
 const UeberUns = () => {
-    const [selectedMitarbeiter, setSelectedMitarbeiter] = useState(false);
+    const [selectedMitarbeiter, setSelectedMitarbeiter] = useState(null);
 
     const mitarbeiter = [
         {
@@ -64,36 +65,57 @@ const UeberUns = () => {
                 </div>
             </div>
 
+            {/* Unser Team Abschnitt */}
             <div className="flex flex-col lg:flex-row p-6 bg-richBlack rounded-lg text-white">
                 {/* Linker Container: Grid mit Cards */}
-                <div className="flex-1 lg:w-2/3">
+                <div className="flex-1">
                     <h3 className="text-2xl font-bold mb-4">Unser Team</h3>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                    <div className="flex flex-wrap justify-left gap-6">
                         {mitarbeiter.map((person, index) => (
                             <Card key={index} className="bg-richBlack text-white">
-                                {/* Card Header für den Namen und Rolle */}
+
                                 <CardHeader>
-                                    <CardTitle className="text-sm font-bold">{person.name}</CardTitle>
-                                    <CardDescription className="text-xs mt-1">{person.rolle}</CardDescription>
+                                    <CardTitle className="text-md font-bold">{person.name}</CardTitle>
+                                    <CardDescription className="text-sm mt-1">{person.rolle}</CardDescription>
                                 </CardHeader>
 
-                                {/* Card Media für das Bild */}
                                 <div className="relative w-full h-4/6">
-                                    <img
+                                    <Image
+                                        height={100}
+                                        width={150}
                                         src={person.bild}
                                         alt={`${person.name}'s Bild`}
-                                        className="object-cover w-full h-full rounded-t-lg"
+                                        className="object-cover w-full h-full "
                                     />
                                 </div>
 
-                                {/* Card Content mit Button */}
-                                <CardContent className="p-2">
-                                    <Button
-                                        className="mt-4 bg-hoverColor text-black"
-                                        onClick={() => setSelectedMitarbeiter(person)}
-                                    >
-                                        Mehr erfahren
-                                    </Button>
+
+                                <CardContent className="flex justify-center">
+                                    <Dialog>
+                                        <DialogTrigger >
+                                            <Button
+                                                className=" mt-2 bg-hoverColor text-black "
+                                                onClick={() => setSelectedMitarbeiter(person)}
+                                            >
+                                                Mehr erfahren
+                                            </Button>
+                                        </DialogTrigger>
+
+                                        <DialogContent>
+                                            <DialogTitle className="text-xl font-semibold">{person.name}</DialogTitle>
+                                            <DialogDescription className="text-gray-400">
+                                                {person.erfahrung}
+                                            </DialogDescription>
+                                            <DialogTrigger>
+                                                <Button
+                                                    className="bg-hoverColor text-black mt-4"
+                                                    onClick={() => setSelectedMitarbeiter(null)}
+                                                >
+                                                    Schließen
+                                                </Button>
+                                            </DialogTrigger>
+                                        </DialogContent>
+                                    </Dialog>
                                 </CardContent>
                             </Card>
                         ))}
@@ -107,35 +129,10 @@ const UeberUns = () => {
                         Wir sind ein leidenschaftliches Team von Fachleuten, die zusammenarbeiten, um die besten Ergebnisse für unsere Kunden zu erzielen. Jeder bringt seine einzigartigen Fähigkeiten mit, um unser Ziel zu erreichen. Wir freuen uns darauf, gemeinsam mit Ihnen zu wachsen!
                     </p>
                     <p className="mt-4 text-gray-400">
-                        Lernen Sie unser Team kennen, indem Sie die Profile unserer Mitarbeiter durchsehen. Klicken Sie auf "Mehr erfahren", um weitere Details zu erfahren.
+                        Lernen Sie unser Team kennen, indem Sie die Profile unserer Mitarbeiter durchsehen. Klicken Sie auf <span className="font-bold">mehr erfahren</span>, um weitere Details zu erfahren.
                     </p>
                 </div>
             </div>
-
-            {/* Modal für Mitarbeiterdetails */}
-            {selectedMitarbeiter && (
-                <Modal
-                    open={Boolean(selectedMitarbeiter)}
-                    onClose={() => setSelectedMitarbeiter(null)}
-                    className="flex items-center justify-center p-4"
-                >
-                    <div className="bg-richBlack rounded-lg p-6 max-w-sm w-full text-white">
-                        <div className="flex flex-col items-center">
-                            <Typography variant="h6" className="text-xl font-semibold mb-2">{selectedMitarbeiter.name}</Typography>
-                            <Typography variant="body2" className="text-gray-400 mb-4 text-center">{selectedMitarbeiter.erfahrung}</Typography>
-                            <Button
-                                className="bg-hoverColor text-black"
-                                variant="contained"
-                                color="secondary"
-                                fullWidth
-                                onClick={() => setSelectedMitarbeiter(null)}
-                            >
-                                Schließen
-                            </Button>
-                        </div>
-                    </div>
-                </Modal>
-            )}
         </section>
     );
 };
