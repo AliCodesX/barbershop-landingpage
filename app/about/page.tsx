@@ -6,10 +6,11 @@ import Image from 'next/image';
 
 
 const UeberUns = () => {
-    const [selectedMitarbeiter, setSelectedMitarbeiter] = useState(null);
+    const [selectedMitarbeiter, setSelectedMitarbeiter] = useState(false);
 
     const mitarbeiter = [
         {
+            selected: true,
             name: "Mojtaba R.",
             rolle: "Frisuer",
             bild: "/assets/mojtaba.jpg",
@@ -17,6 +18,7 @@ const UeberUns = () => {
                 "Mojtaba hat seine Ausbildung 2018 erfolgreich abgeschlossen und begeistert seither mit seinen frischen Ideen und seinem Geschick als Friseur. Gemeinsam mit Zobeid führt er den BarberShop und bringt frischen Wind in das Team.",
         },
         {
+            selected: true,
             name: "Zobeid A.",
             rolle: "Filialleiter, Frisuer",
             bild: "/assets/zobeid.jpg",
@@ -114,7 +116,7 @@ const UeberUns = () => {
                                     <Dialog>
                                         <DialogTrigger
                                             className="mt-2 bg-hoverColor text-black px-2 py-1 text-sm font-semibold rounded-lg"
-                                            onClick={() => setSelectedMitarbeiter(person)}
+                                            onClick={() => setSelectedMitarbeiter(person.selected)}
                                         >
                                             Mehr erfahren
                                         </DialogTrigger>
@@ -128,7 +130,7 @@ const UeberUns = () => {
                                                 </DialogDescription>
                                                 <DialogTrigger
                                                     className="bg-hoverColor text-black mt-4 px-4 py-2 rounded-lg font-semibold"
-                                                    onClick={() => setSelectedMitarbeiter(null)}
+                                                    onClick={() => setSelectedMitarbeiter(person.selected)}
                                                 >
                                                     Schließen
                                                 </DialogTrigger>
