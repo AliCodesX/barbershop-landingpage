@@ -24,7 +24,7 @@ const Banner = () => {
                 <video
                     className="w-full h-full object-cover"
                     style={{ transform: 'scale(1.62) translateY(-10%)' }} // Optional: Zoom und Verschiebung
-                    src="/assets/Intro.mp4"
+                    src="https://res.cloudinary.com/dwxo7smmp/video/upload/v1734975741/qunxohwpaak9gyoebfeb.mp4"
                     autoPlay
                     muted
                     loop
