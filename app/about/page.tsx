@@ -1,7 +1,6 @@
 'use client';
 import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import Image from 'next/image';
 
@@ -110,7 +109,7 @@ const UeberUns = () => {
                                     </div>
                                 </CardContent>
 
-                                {/* Dialog Inhalt */}
+
                                 <CardContent className="px-4 py-2 flex justify-center">
                                     <Dialog>
                                         <DialogTrigger
@@ -120,19 +119,22 @@ const UeberUns = () => {
                                             Mehr erfahren
                                         </DialogTrigger>
 
-                                        <DialogContent className="bg-blackBackground border-none">
-                                            <DialogTitle
-                                                className="text-hoverColor font-bold">{person.name}</DialogTitle>
-                                            <DialogDescription className="text-gray-400 font-semibold">
-                                                {person.erfahrung}
-                                            </DialogDescription>
-                                            <DialogTrigger
-                                                className="bg-hoverColor text-black mt-4 px-4 py-2 rounded-lg font-semibold"
-                                                onClick={() => setSelectedMitarbeiter(null)}
-                                            >
-                                                Schließen
-                                            </DialogTrigger>
-                                        </DialogContent>
+                                        {selectedMitarbeiter && (
+                                            <DialogContent className="bg-blackBackground border-none">
+                                                <DialogTitle
+                                                    className="text-hoverColor font-bold">{person.name}</DialogTitle>
+                                                <DialogDescription className="text-gray-400 font-semibold">
+                                                    {person.erfahrung}
+                                                </DialogDescription>
+                                                <DialogTrigger
+                                                    className="bg-hoverColor text-black mt-4 px-4 py-2 rounded-lg font-semibold"
+                                                    onClick={() => setSelectedMitarbeiter(null)}
+                                                >
+                                                    Schließen
+                                                </DialogTrigger>
+                                            </DialogContent>
+                                        )}
+
                                     </Dialog>
                                 </CardContent>
                             </Card>
