@@ -24,7 +24,7 @@ const Banner = () => {
                 <video
                     className="w-full h-full object-cover"
                     style={{ transform: 'scale(1.62) translateY(-10%)' }} // Optional: Zoom und Verschiebung
-                    src="/assets/intro.mp4"
+                    src="/assets/Intro.mp4"
                     autoPlay
                     muted
                     loop
