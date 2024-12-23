@@ -1,7 +1,6 @@
 'use client';
 
 import React from "react";
-import { Container, Typography, Box, Card, CardContent, Grid } from "@mui/material";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 const Contact = () => {
@@ -13,74 +12,54 @@ const Contact = () => {
     // Typewriter effect using the hook
     const [text] = useTypewriter({
         words: ["Du kannst jederzeit ohne Termin vorbeikommen."],
-        loop: 0, // Loop 0 means it only types once
-        delaySpeed: 100,
+        loop: true,
+        typeSpeed: 30,
+        deleteSpeed: 10,
+        delaySpeed: 2000,
     });
 
     return (
-        <Container className="mt-10 p-6" maxWidth="lg" sx={{ py: 4, backgroundColor: '#1f1f1f', borderRadius: 2, boxShadow: 4 }}>
-            {/* Typewriter Text */}
-            <Box sx={{ mb: 4 }}>
-                <Typography className="text-center" variant="h4" gutterBottom sx={{ color: "#fff", fontWeight: 'bold' }}>
-                    Besuche uns ohne einen Termin!
-                </Typography>
-                <Typography className="text-center" variant="h6" sx={{ color: "#bdbdbd" }}>
-                    {text}
-                    <Cursor />
-                </Typography>
-            </Box>
+        <section className="mt-10 px-4 lg:px-16">
+            <div className="mt-10 p-6 bg-blackBackground text-white rounded-md shadow-md">
+                {/* Typewriter Text */}
+                <div className="mb-6 text-center">
+                    <h2 className="text-2xl font-bold mb-2">Besuche uns ohne einen Termin!</h2>
+                    <p className="text-base md:text-lg font-semibold mt-4">
+                        {text} <Cursor cursorBlinking cursorStyle="|" cursorColor="#ffaa17"/>
+                    </p>
+                </div>
 
-            {/* Kontaktinformationen */}
-            <Box sx={{ mb: 4 }}>
-                <Typography variant="h5" gutterBottom sx={{ color: "#fff", fontWeight: 'bold' }}>
-                    Kontaktinformationen
-                </Typography>
-                <Grid container spacing={2}>
-                    <Grid item xs={12} sm={6}>
-                        <Card className="bg-richBlack text-white" variant="outlined" sx={{ borderRadius: 2, boxShadow: 3 }}>
-                            <CardContent>
-                                <Typography variant="subtitle1" sx={{ color: "#fff", fontWeight: 'bold' }}>Adresse</Typography>
-                                <Typography variant="body2" sx={{ color: "#bdbdbd" }}>{address}</Typography>
-                            </CardContent>
-                        </Card>
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                        <Card className="bg-richBlack text-white" variant="outlined" sx={{ borderRadius: 2, boxShadow: 3 }}>
-                            <CardContent>
-                                <Typography variant="subtitle1" sx={{ color: "#fff", fontWeight: 'bold' }}>Telefon</Typography>
-                                <Typography variant="body2" sx={{ color: "#bdbdbd" }}>{phone}</Typography>
-                            </CardContent>
-                        </Card>
-                    </Grid>
-                </Grid>
-            </Box>
+                {/* Kontaktinformationen */}
+                <div className="mb-6">
+                    <h3 className="text-xl font-bold mb-4">Kontaktinformationen</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="bg-richBlack p-4 rounded-md shadow">
+                            <h4 className="text-lg font-semibold mb-2">Adresse</h4>
+                            <p className="text-gray-400">{address}</p>
+                        </div>
+                        <div className="bg-richBlack p-4 rounded-md shadow">
+                            <h4 className="text-lg font-semibold mb-2">Telefon</h4>
+                            <p className="text-gray-400">{phone}</p>
+                        </div>
+                    </div>
+                </div>
 
-            {/* Öffnungszeiten */}
-            <Box sx={{ mb: 4 }}>
-                <Typography variant="h5" gutterBottom sx={{ color: "#fff", fontWeight: 'bold' }}>
-                    Öffnungszeiten
-                </Typography>
-                <Grid container spacing={2}>
-                    <Grid item xs={12} sm={6}>
-                        <Card className="bg-richBlack text-white" variant="outlined" sx={{ borderRadius: 2, boxShadow: 3 }}>
-                            <CardContent>
-                                <Typography variant="subtitle1" sx={{ color: "#fff", fontWeight: 'bold' }}>Unsere Öffnungszeiten</Typography>
-                                <Typography variant="body2" sx={{ color: "#bdbdbd" }}>{openingHours}</Typography>
-                            </CardContent>
-                        </Card>
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                        <Card className="bg-richBlack text-white" variant="outlined" sx={{ borderRadius: 2, boxShadow: 3 }}>
-                            <CardContent>
-                                <Typography variant="body2" sx={{ color: "#bdbdbd" }}>
-                                    {holidayNotice}
-                                </Typography>
-                            </CardContent>
-                        </Card>
-                    </Grid>
-                </Grid>
-            </Box>
-        </Container>
+                {/* Öffnungszeiten */}
+                <div className="mb-6">
+                    <h3 className="text-xl font-bold mb-4">Öffnungszeiten</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="bg-richBlack p-4 rounded-md shadow">
+                            <h4 className="text-lg font-semibold mb-2">Unsere Öffnungszeiten</h4>
+                            <p className="text-gray-400">{openingHours}</p>
+                        </div>
+                        <div className="bg-richBlack p-4 rounded-md shadow">
+                            <p className="text-gray-400">{holidayNotice}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     );
 };
 
