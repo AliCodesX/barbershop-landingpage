@@ -46,7 +46,7 @@ const Footer = () => {
                     <h3 className="text-lg font-semibold mb-4"> SocialMedia </h3>
                     <div className="flex items-center space-x-6">
                         <a
-                            href="https://www.tiktok.com/@deinprofil"
+                            href="https://www.tiktok.com/@momo.zozo.barber?_t=8sTxmGtdyxa&_r=1"
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="TikTok"
@@ -55,7 +55,7 @@ const Footer = () => {
                             <FaTiktok />
                         </a>
                         <a
-                            href="https://www.instagram.com/deinprofil"
+                            href="https://www.instagram.com/momo.zozo.barber?igsh=aDQ2emNuaGVxbnBk"
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="Instagram"
