@@ -28,6 +28,7 @@ const Banner = () => {
                     autoPlay={true}
                     muted={true}
                     loop= {true}
+                    playsInline
                 />
             </div>
 

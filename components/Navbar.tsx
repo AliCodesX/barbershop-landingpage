@@ -58,10 +58,10 @@ const Navbar = () => {
                     </div>
                     <ul className="space-y-4">
 
-                        <li className="navbarLi"> <Link href="./" >Home</Link></li>
-                        <li className="navbarLi"> <Link href="/about" >Über uns</Link></li>
-                        <li className="navbarLi"> <Link href="/price" >Preise</Link></li>
-                        <li className="navbarLi"> <Link href="/contact" >Kontakt</Link></li>
+                        <li onClick={toggleMenu} className="navbarLi"> <Link href="./" >Home</Link></li>
+                        <li onClick={toggleMenu} className="navbarLi"> <Link href="/about" >Über uns</Link></li>
+                        <li onClick={toggleMenu} className="navbarLi"> <Link href="/price" >Preise</Link></li>
+                        <li onClick={toggleMenu} className="navbarLi"> <Link href="/contact" >Kontakt</Link></li>
                     </ul>
                 </motion.div>
             </div>
