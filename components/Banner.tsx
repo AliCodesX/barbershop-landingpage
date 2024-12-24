@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
+import ShimmerButtonCard from "@/components/ui/ShimmerButton";
+import Link from "next/link";
 
 const Banner = () => {
     const [text] = useTypewriter({
@@ -26,7 +28,7 @@ const Banner = () => {
                     style={{ transform: 'scale(1.62) translateY(-10%)' }} // Optional: Zoom und Verschiebung
                     src="https://res.cloudinary.com/dwxo7smmp/video/upload/v1734975741/qunxohwpaak9gyoebfeb.mp4"
                     autoPlay={true}
-                    muted={true}
+                    muted
                     loop= {true}
                     playsInline
                 />
@@ -44,6 +46,12 @@ const Banner = () => {
                     {text} <Cursor cursorBlinking cursorStyle="|" cursorColor="#ffaa17" />
                 </p>
             </div>
+
+           <Link href="/about">
+           <ShimmerButtonCard>
+           </ShimmerButtonCard>
+           </Link>
+
         </div>
     );
 };

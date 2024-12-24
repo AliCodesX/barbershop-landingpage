@@ -90,7 +90,7 @@ const UeberUns = () => {
                         {mitarbeiter.map((person, index) => (
                             <Card
                                 key={index}
-                                className="bg-richBlack text-white border-none drop-shadow-lg h-80 w-64 flex flex-col justify-between"
+                                className="bg-richBlack text-white border-none drop-shadow-lg h-full w-64 flex flex-col justify-between"
                             >
                                 <CardHeader className="px-4 py-2">
                                     <CardTitle className="text-lg font-bold text-hoverColor">{person.name}</CardTitle>
@@ -115,7 +115,7 @@ const UeberUns = () => {
                                 <CardContent className="px-4 py-2 flex justify-center">
                                     <Dialog>
                                         <DialogTrigger
-                                            className="mt-2 bg-hoverColor text-black px-2 py-1 text-sm font-semibold rounded-lg"
+                                            className="mt-2 bg-hoverColor text-black px-2 py-2 text-sm font-semibold rounded-lg"
                                             onClick={() => setSelectedMitarbeiter(person.selected)}
                                         >
                                             Mehr erfahren
