@@ -5,7 +5,7 @@ import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 const Contact = () => {
     const address = "Am Schilfspark 26, 21029 Hamburg";
-    const phone = "+49 123 456789";
+    const phone = "040/ 320 44 777";
     const openingHours = "Mo - Sa: 9:00 - 19:00 Uhr";
     const holidayNotice = "An Feiertagen können die Öffnungszeiten abweichen.";
 
