@@ -11,19 +11,19 @@ const UeberUns = () => {
     const mitarbeiter = [
         {
             selected: true,
-            name: "Mojtaba R.",
+            name: "Momo",
             rolle: "Frisuer",
             bild: "/assets/mojtaba.jpg",
             erfahrung:
-                "Mojtaba hat seine Ausbildung 2018 erfolgreich abgeschlossen und begeistert seither mit seinen frischen Ideen und seinem Geschick als Friseur. Gemeinsam mit Zobeid führt er den BarberShop und bringt frischen Wind in das Team.",
+                "Momo hat seine Ausbildung 2018 erfolgreich abgeschlossen und begeistert seither mit seinen frischen Ideen und seinem Geschick als Friseur. Gemeinsam mit Zobeid führt er den BarberShop und bringt frischen Wind in das Team.",
         },
         {
             selected: true,
-            name: "Zobeid A.",
+            name: "Zozo",
             rolle: "Filialleiter, Frisuer",
             bild: "/assets/zobeid.jpg",
             erfahrung:
-                "Zobeid ist seit 2007 ein erfahrener Friseur und hat seine Ausbildung damals erfolgreich abgeschlossen. Im Laufe der Jahre hat er nicht nur sein Handwerk perfektioniert, sondern auch viele zufriedene Kunden gewonnen. Heute ist er der Filialleiter und führt den BarberShop erfolgreich in die Selbstständigkeit.",
+                "Zozo ist seit 2007 ein erfahrener Friseur und hat seine Ausbildung damals erfolgreich abgeschlossen. Im Laufe der Jahre hat er nicht nur sein Handwerk perfektioniert, sondern auch viele zufriedene Kunden gewonnen. Heute ist er der Filialleiter und führt den BarberShop erfolgreich in die Selbstständigkeit.",
         },
     ];
 
